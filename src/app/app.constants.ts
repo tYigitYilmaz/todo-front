@@ -1,0 +1,5 @@
+export const API_URL = "http://localhost:8080"
+export const TODO_JPA_API_URL = "http://localhost:8080/jpa"
+export const UserService_URL = "http://localhost:7000"
+export const Gateway_UserService_URL = "http://localhost:8765/user-service"
+export const Gateway_TodoService_URL = "http://localhost:8765/webservices-front"
