@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Gateway_TodoService_URL } from 'src/app/app.constants';
 
 export class HelloWorldBean {
   constructor(public message:String){ }
@@ -15,7 +16,7 @@ export class WelcomeDataService {
   ) { }
 
   executeHelloWorldBeanService(){
-    return this.http.get<HelloWorldBean>('http://localhost:8080/hello-world-bean');
+    return this.http.get<HelloWorldBean>(`${Gateway_TodoService_URL}/hello-world-bean`);
     //console.log("Execute Hello World Bean Service")
   }
   
@@ -28,7 +29,7 @@ export class WelcomeDataService {
     //   })
 
     return this.http.get<HelloWorldBean>(
-      `http://localhost:8080/hello-world/path-variable/${name}`,
+      `${Gateway_TodoService_URL}/hello-world/path-variable/${name}`,
       // {headers}
       );
     //console.log("Execute Hello World Bean Service")

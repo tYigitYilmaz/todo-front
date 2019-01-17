@@ -15,7 +15,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TodoComponent } from './todo/todo.component';
 import { PopupMenuComponent } from './popup-menu/popup-menu.component';
 import { HttpIntercepterBasicAuthService } from './service/http/http-intercepter-basic-auth.service';
-
+import { RegisterComponent } from './register/register.component';
+import { UserComponent } from './user/user.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,13 +31,17 @@ import { HttpIntercepterBasicAuthService } from './service/http/http-intercepter
     FooterComponent,
     LogoutComponent,
     TodoComponent,
-    PopupMenuComponent
+    PopupMenuComponent,
+    RegisterComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [
      {provide:HTTP_INTERCEPTORS,useClass:HttpIntercepterBasicAuthService,multi:true}
